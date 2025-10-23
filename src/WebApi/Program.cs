@@ -6,6 +6,7 @@ using Whistler.Infrastructure;
 public class Program
 {
     private const string SERVICE_NAME = "Whistler";
+    private const string SERVICE_NAMESPACE = "PoC";
 
     public static async Task<int> Main(string[] args)
     {
@@ -23,6 +24,7 @@ public class Program
 
         builder.Services.AddHealthChecks();
 
+        builder.Services.AddObservability(SERVICE_NAME, SERVICE_NAMESPACE);
         builder.Services.AddApplication();
         builder.Services.AddInfrastructure(builder.Configuration);
 
