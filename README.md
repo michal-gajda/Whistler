@@ -27,6 +27,46 @@ dotnet add src/Application package MediatR
 dotnet add src/Infrastructure package Microsoft.Extensions.Configuration.Binder
 ```
 
+## Unit Tests
+
+```powershell
+dotnet new mstest --output tests/Domain.UnitTests --name Whistler.Domain.UnitTests
+dotnet sln add tests/Domain.UnitTests
+dotnet add tests/Domain.UnitTests reference src/Domain
+dotnet add tests/Domain.UnitTests package Shouldly
+```
+
+```powershell
+dotnet new mstest --output tests/Application.UnitTests --name Whistler.Application.UnitTests
+dotnet sln add tests/Application.UnitTests
+dotnet add tests/Application.UnitTests reference src/Application
+dotnet add tests/Application.UnitTests package NSubstitute 
+dotnet add tests/Application.UnitTests package Shouldly
+```
+
+## Functional Tests
+
+```powershell
+dotnet new mstest --output tests/Application.FunctionalTests --name Whistler.Application.FunctionalTests
+dotnet sln add tests/Application.FunctionalTests
+dotnet add tests/Application.FunctionalTests reference src/Infrastructure
+dotnet add tests/Application.FunctionalTests package Microsoft.Extensions.Configuration
+dotnet add tests/Application.FunctionalTests package Microsoft.Extensions.DependencyInjection
+dotnet add tests/Application.FunctionalTests package Microsoft.Extensions.Logging
+dotnet add tests/Application.FunctionalTests package Microsoft.Extensions.TimeProvider.Testing
+dotnet add tests/Application.FunctionalTests package Shouldly
+```
+
+## End to End Tests
+
+```powershell
+dotnet new mstest --output tests/WebApi.EndToEndTests --name Whistler.WebApi.EndToEndTests
+dotnet sln add tests/WebApi.EndToEndTests
+dotnet add tests/WebApi.EndToEndTests reference src/WebApi
+dotnet add tests/WebApi.EndToEndTests package Microsoft.AspNetCore.Mvc.Testing
+dotnet add tests/WebApi.EndToEndTests package Shouldly
+```
+
 ```powershell
 dotnet publish src/WebApi --configuration Release --self-contained true --output C:/Workspaces/Tools/Whistler
 ```

@@ -12,4 +12,17 @@
   <Folder Name="/src/WebApi/">
     <Project Path="src/WebApi/Whistler.WebApi.csproj" />
   </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/Application.FunctionalTests/">
+    <Project Path="tests/Application.FunctionalTests/Whistler.Application.FunctionalTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Application.UnitTests/">
+    <Project Path="tests/Application.UnitTests/Whistler.Application.UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Domain.UnitTests/">
+    <Project Path="tests/Domain.UnitTests/Whistler.Domain.UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/WebApi.EndToEndTests/">
+    <Project Path="tests/WebApi.EndToEndTests/Whistler.WebApi.EndToEndTests.csproj" />
+  </Folder>
 </Solution>

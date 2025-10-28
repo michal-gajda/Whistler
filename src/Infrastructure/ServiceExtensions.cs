@@ -12,6 +12,8 @@ public static class ServiceExtensions
 
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
 
+        services.AddSingleton<TimeProvider>(TimeProvider.System);
+
         return services;
     }
 }

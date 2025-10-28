@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+    <InternalsVisibleTo Include="LINQPadQuery" />
+    <InternalsVisibleTo Include="Whistler.Domain.UnitTests" />
+  </ItemGroup>
+
 </Project>

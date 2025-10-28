@@ -9,7 +9,6 @@
   <ItemGroup>
     <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
     <InternalsVisibleTo Include="LINQPadQuery" />
-    <InternalsVisibleTo Include="Whistler.Infrastructure.UnitTests" />
   </ItemGroup>
 
   <ItemGroup>
